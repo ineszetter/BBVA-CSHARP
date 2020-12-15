@@ -33,8 +33,8 @@ namespace Bbva.Entities.Request
                     var value = finalObj.ToObject<Dictionary<String, Object>>();
                     AddMultiValue(new ParameterContainer(item.Key, value));
                 } else
-                {
-                    AddValue(item.Key, (String)item.Value);
+                {                    
+                    AddValue(item.Key, item.Value == null ? (String)item.Value : item.Value.ToString());
                 }
             }
         }
